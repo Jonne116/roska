@@ -1,0 +1,16 @@
+body {
+    margin: 0em;
+    padding: 0em;
+    border: 0rem;
+}
+#roskapeli {
+    background: rgb(205, 236, 205);
+    border: solid black 1px;
+}
+
+button {
+    width: 5rem;
+    padding: 0rem;
+    height: 4rem;
+    border: none;
+}
