@@ -36,6 +36,9 @@ buttonarray.forEach((elem) => {
           points++;
           roskat.shift();
       }
+      else {
+          missed++;
+      }
     })
 });
 
@@ -50,7 +53,7 @@ function drawroska() {
     if (missed >= 10) {
             ctx.fillStyle = "#555";
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillText("Game End", 60, 50); 
+            ctx.fillText("Game End", 150, 200); 
         }
 
     else if (kakka.yPosition < (canvas.height - 50)) {
@@ -69,10 +72,10 @@ function drawroska() {
       roskat.shift();
       remove = false;
   }
-ctx.font = "30px Arial";
+ctx.font = "20px Arial";
 ctx.fillStyle = "#555";
-ctx.fillText(points,20,40);
-
+ctx.fillText("Pisteet: " + points,20,40);
+ctx.fillText("Huti: " + missed + "/10", 350, 40)
 time = time + 0.001;
 }
 
