@@ -3,23 +3,23 @@ import { Roska } from './objecti.js';
 const canvas = document.getElementById("roskapeli");
 const ctx = canvas.getContext("2d");
 
-ctx.fillStyle = "#003";
+
+
+const laji = ["sekajate", "energiajate", "biojate", "metalli", "pahvi"];
+let roskat = [];
+let missed = 0;
+let points = 0;
+let time = 2;
 
 
 function randomPosition() {
    return Math.floor(Math.random() * (canvas.width -50));
 }
-const laji = ["sekajate", "energiajate", "biojate", "paperi", "pahvi"];
+
 
 function randomType() {
     return laji[Math.floor(Math.random() * 5)];
 }
-
-let time= 5;
-let roskat = [];
-let missed = 0;
-let points = 0;
-
 
 function addRoska() {
 
@@ -39,37 +39,46 @@ buttonarray.forEach((elem) => {
     })
 });
 
-let drawroska = () => {
+
+function drawroska() {
     let remove = false;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.font = "30px Arial";
-    ctx.fillText(points,20,40);
+
     roskat.forEach((kakka) => {
-        if (missed >= 10) {
+    ctx.fillStyle = kakka.color;
+
+    if (missed >= 10) {
+            ctx.fillStyle = "#555";
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
             ctx.fillText("Game End", 60, 50); 
         }
-    else if (kakka.yPosition !== (canvas.height - 50) && missed < 11) {
+
+    else if (kakka.yPosition < (canvas.height - 50)) {
         
         ctx.fillRect(kakka.xPosition, kakka.yPosition, 50, 50);
         kakka.yPosition = kakka.yPosition + kakka.speed;
     }
+
     else {
         missed++;
         remove = true;
     }
   } );
+
   if (remove) {
       roskat.shift();
       remove = false;
   }
+ctx.font = "30px Arial";
+ctx.fillStyle = "#555";
+ctx.fillText(points,20,40);
+
+time = time + 0.001;
 }
 
 
-
 setInterval(addRoska, 3000);
-setInterval(drawroska, 100);
+setInterval(drawroska, 50);
 
 
 
