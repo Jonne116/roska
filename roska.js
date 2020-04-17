@@ -83,15 +83,15 @@ switch(time) {
     case 2.5:
         setInterval(addRoska, 1500);
     case 3.0:
-        setInterval(addRoska, 1000);
+        setInterval(addRoska, 700);
     case 3.5:
-        setInterval(addRoska, 500);
-    case 4.0:
         setInterval(addRoska, 300);
+    case 4.0:
+        setInterval(addRoska, 150);
     case 4.5:
-        setInterval(addRoska, 200);
+        setInterval(addRoska, 80);
     case 5.0:
-        setInterval(addRoska, 100);
+        setInterval(addRoska, 50);
 
     default:
         setInterval(addRoska, 2500);
