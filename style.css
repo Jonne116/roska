@@ -17,6 +17,7 @@ body {
 buttongroup {
     display: flex;
     justify-content: space-evenly;
+    align-items: stretch;
 }
 
 button {
