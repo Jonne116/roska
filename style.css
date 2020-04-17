@@ -7,10 +7,14 @@ body {
 #roskapeli {
     background: rgb(205, 236, 205);
     border: solid black 1px;
-    width: 80%;
-    
-    
+    width: 75%
 }
+
+#roska {
+    width: 75%
+}
+
+
 
 
 
