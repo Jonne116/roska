@@ -25,11 +25,7 @@ body {
     width: 80vh;
 }
 
-#buttongroup {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: stretch;
-}
+
 
 button {
     padding: auto;
