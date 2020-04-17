@@ -18,11 +18,9 @@ body {
         padding: 0em;
         border: 0rem;
         box-sizing: border-box;
+        width: 80%;
     }
 
-#roskapeli {
-    width: 80%;
-}
 
 #roska {
     width: 80vh;
