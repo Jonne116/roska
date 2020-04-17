@@ -11,37 +11,3 @@ body {
 }
 
 
-
-@media only screen and (max-width: 1000px) {
-    body {
-        margin: 0em;
-        padding: 0em;
-        border: 0rem;
-        box-sizing: border-box;
-     
-    }
-
-    #roska {
-        height: 100vh;
-        width: 100vw;
-        display: grid;
-        justify-items: stretch;
-        align-items: stretch;
-        grid-template-columns: 1;
-        grid-template-rows: 3;
-        
-    }
-
-    #buttongroup {
-        align-items: stretch;
-        justify-items: stretch;
-       
-    }
-
-    button {
-  
-    }
-
- 
-
-}
