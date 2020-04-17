@@ -76,7 +76,7 @@ ctx.font = "20px Arial";
 ctx.fillStyle = "#555";
 ctx.fillText("Pisteet: " + points,20,40);
 ctx.fillText("Huti: " + missed + "/10", 200, 40)
-time = time + 0.01;
+time = time + 0.03;
 }
 
 switch(time) {
