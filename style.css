@@ -7,6 +7,14 @@ body {
 #roskapeli {
     background: rgb(205, 236, 205);
     border: solid black 1px;
+    
+}
+
+
+
+@media only screen and (min-width: 800px){
+
+#roskapeli {
     width: 95%
 }
 
@@ -14,7 +22,7 @@ body {
     width: 75%
 }
 
-buttongroup {
+#buttongroup {
     display: flex;
     justify-content: space-evenly;
     align-items: stretch;
@@ -23,5 +31,4 @@ buttongroup {
 button {
     height: 50px;
 }
-
-
+}
