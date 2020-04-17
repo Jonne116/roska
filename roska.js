@@ -75,7 +75,7 @@ function drawroska() {
 ctx.font = "20px Arial";
 ctx.fillStyle = "#555";
 ctx.fillText("Pisteet: " + points,20,40);
-ctx.fillText("Huti: " + missed + "/10", 300, 40)
+ctx.fillText("Huti: " + missed + "/10", 250, 40)
 time = time + 0.01;
 }
 
