@@ -33,7 +33,8 @@ body {
 }
 
 button {
-    height: 100px;
+    padding: auto;
+    height: 50px;
     width: auto;
 }
 }
