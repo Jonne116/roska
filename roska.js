@@ -13,7 +13,7 @@ let time = 2;
 
 
 function randomPosition() {
-   return Math.floor(Math.random() * (canvas.width -50));
+   return Math.floor(Math.random() * (canvas.width -20));
 }
 
 
@@ -53,12 +53,12 @@ function drawroska() {
     if (missed >= 10) {
             ctx.fillStyle = "#555";
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillText("Game End", 150, 200); 
+            ctx.fillText("Game End", 110, 100); 
         }
 
-    else if (kakka.yPosition < (canvas.height - 50)) {
+    else if (kakka.yPosition < (canvas.height - 20)) {
         
-        ctx.fillRect(kakka.xPosition, kakka.yPosition, 50, 50);
+        ctx.fillRect(kakka.xPosition, kakka.yPosition, 20, 20);
         kakka.yPosition = kakka.yPosition + kakka.speed;
     }
 
@@ -75,13 +75,29 @@ function drawroska() {
 ctx.font = "20px Arial";
 ctx.fillStyle = "#555";
 ctx.fillText("Pisteet: " + points,20,40);
-ctx.fillText("Huti: " + missed + "/10", 350, 40)
-time = time + 0.001;
+ctx.fillText("Huti: " + missed + "/10", 300, 40)
+time = time + 0.01;
 }
 
+switch(time) {
+    case 2.5:
+        setInterval(addRoska, 1500);
+    case 3.0:
+        setInterval(addRoska, 1000);
+    case 3.5:
+        setInterval(addRoska, 500);
+    case 4.0:
+        setInterval(addRoska, 300);
+    case 4.5:
+        setInterval(addRoska, 200);
+    case 5.0:
+        setInterval(addRoska, 100);
 
-setInterval(addRoska, 3000);
-setInterval(drawroska, 50);
+    default:
+        setInterval(addRoska, 2500);
+}
+
+setInterval(drawroska, 60);
 
 
 
