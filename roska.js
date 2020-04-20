@@ -5,7 +5,7 @@ const ctx = canvas.getContext("2d");
 
 if (window.innerWidth < 600) {
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight - 150;
+    canvas.height = window.innerHeight - 100;
 }
 
 else {
@@ -23,7 +23,7 @@ let roskaSpeedUp = 0.011;
 
 
 function randomPosition() {
-   return Math.floor(Math.random() * (canvas.width -20));
+   return Math.floor(Math.random() * (canvas.width -30));
 }
 
 
