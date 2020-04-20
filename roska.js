@@ -3,13 +3,23 @@ import { Roska } from './objecti.js';
 const canvas = document.getElementById("roskapeli");
 const ctx = canvas.getContext("2d");
 
+if (window.innerWidth < 600) {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight - 150;
+}
 
+else {
+    canvas.width = 400;
+    canvas.height = 600;
+}
 
 const laji = ["sekajate", "energiajate", "biojate", "metalli", "pahvi"];
 let roskat = [];
 let missed = 0;
 let points = 0;
-let time = 2;
+let time = 2.5;
+let newRoska = 2.5;
+let roskaSpeedUp = 0.011;
 
 
 function randomPosition() {
@@ -44,6 +54,7 @@ buttonarray.forEach((elem) => {
 
 
 function drawroska() {
+    
     let remove = false;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -56,9 +67,9 @@ function drawroska() {
             ctx.fillText("Game End", 110, 100); 
         }
 
-    else if (kakka.yPosition < (canvas.height - 20)) {
+    else if (kakka.yPosition < (canvas.height - 30)) {
         
-        ctx.fillRect(kakka.xPosition, kakka.yPosition, 20, 20);
+        ctx.fillRect(kakka.xPosition, kakka.yPosition, 30, 30);
         kakka.yPosition = kakka.yPosition + kakka.speed;
     }
 
@@ -75,29 +86,20 @@ function drawroska() {
 ctx.font = "20px Arial";
 ctx.fillStyle = "#555";
 ctx.fillText("Pisteet: " + points,20,40);
-ctx.fillText("Huti: " + missed + "/10", 200, 40)
-time = time + 0.03;
+ctx.fillText("Huti: " + missed + "/10", (canvas.width - 100), 40)
+time = time + 0.01;
+newRoska = newRoska + roskaSpeedUp;
+
+console.log(newRoska - time);
+
+if (newRoska > (time + 0.04)) {
+    addRoska()
+    roskaSpeedUp = roskaSpeedUp + 0.00005;
+    newRoska = time;    
+}
 }
 
-switch(time) {
-    case 2.2:
-        setInterval(addRoska, 1500);
-    case 2.7:
-        setInterval(addRoska, 700);
-    case 3.1:
-        setInterval(addRoska, 300);
-    case 3.9:
-        setInterval(addRoska, 150);
-    case 4.3:
-        setInterval(addRoska, 80);
-    case 4.8:
-        setInterval(addRoska, 50);
-
-    default:
-        setInterval(addRoska, 2500);
-}
-
-setInterval(drawroska, 60);
+setInterval(drawroska, 75);
 
 
 
