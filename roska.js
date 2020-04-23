@@ -52,6 +52,8 @@ buttonarray.forEach((elem) => {
     })
 });
 
+let wasteImg = new Image();
+wasteImg.src = "jätteet.png";
 
 function drawroska() {
     
@@ -67,9 +69,9 @@ function drawroska() {
             ctx.fillText("Game End", 110, 100); 
         }
 
-    else if (kakka.yPosition < (canvas.height - 30)) {
+    else if (kakka.yPosition < (canvas.height - 50)) {
         
-        ctx.fillRect(kakka.xPosition, kakka.yPosition, 30, 30);
+        ctx.drawImage(wasteImg, kakka.imageX, kakka.imageY, 100, 100, kakka.xPosition, kakka.yPosition, 50, 50);
         kakka.yPosition = kakka.yPosition + kakka.speed;
     }
 
