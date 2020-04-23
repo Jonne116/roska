@@ -5,11 +5,17 @@ body {
     box-sizing: border-box;
 }
 #roskapeli {
-    background: rgb(205, 236, 205);
+    background-image: url("./backg.jpg");
     border: solid black 1px;
+    background-size: cover;
     
 }
 
+button {
+    width: 75px; 
+    height: 50px;
+    
+}
 
 
 @media only screen and (max-width: 1000px){

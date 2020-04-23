@@ -23,7 +23,7 @@ let roskaSpeedUp = 0.011;
 
 
 function randomPosition() {
-   return Math.floor(Math.random() * (canvas.width -30));
+   return Math.floor(Math.random() * (canvas.width -50));
 }
 
 
@@ -64,9 +64,9 @@ function drawroska() {
     ctx.fillStyle = kakka.color;
 
     if (missed >= 10) {
-            ctx.fillStyle = "#555";
+            ctx.fillStyle = "#FFF";
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillText("Game End", 110, 100); 
+            ctx.fillText("Peli loppui", 150, 200); 
         }
 
     else if (kakka.yPosition < (canvas.height - 50)) {
@@ -86,9 +86,9 @@ function drawroska() {
       remove = false;
   }
 ctx.font = "20px Arial";
-ctx.fillStyle = "#555";
+ctx.fillStyle = "#FFF";
 ctx.fillText("Pisteet: " + points,20,40);
-ctx.fillText("Huti: " + missed + "/10", (canvas.width - 100), 40)
+ctx.fillText("Huti: " + missed + "/10", (canvas.width - 110), 40)
 time = time + 0.01;
 newRoska = newRoska + roskaSpeedUp;
 
