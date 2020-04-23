@@ -1,9 +1,13 @@
 body {
-    margin: 0em;
+    margin-top: 5rem;
     padding: 0em;
     border: 0rem;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
+
 #roskapeli {
     background-image: url("backg.jpg");
     border: solid black 1px;
